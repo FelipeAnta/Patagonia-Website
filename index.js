@@ -11,7 +11,7 @@ if ((nombre == "") && (apellido == "") && (edad = "")) {
     edad = prompt("Ingrese su edad")
 }
 
-alert("Te damos la bienvenida~ " + " " + nombre + " " + apellido + " " + "a PatagoniaFTE")
+alert("Te damos la bienvenida " + " " + nombre + " " + apellido + " " + "a PatagoniaFTE")
 
 const product = [
     {
