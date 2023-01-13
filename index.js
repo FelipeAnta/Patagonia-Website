@@ -2,13 +2,11 @@ alert("Bienvenido a PatagoniaFTE")
 
 let nombre = prompt("Ingrese su nombre");
 let apellido = prompt("Ingrese su apellido");
-let edad = prompt("Ingrese su edad")
 
-if ((nombre == "") && (apellido == "") && (edad = "")) {
+if ((nombre == "") && (apellido == "")) {
     alert("Necesitas rellenar el campo de nombre y apellido para continuar la operacion")
     nombre = prompt("Ingrese su nombre");
     apellido = prompt("Ingrese su apellido");
-    edad = prompt("Ingrese su edad")
 }
 
 alert("Te damos la bienvenida " + " " + nombre + " " + apellido + " " + "a PatagoniaFTE")
@@ -57,9 +55,11 @@ const categories = [...new Set(product.map((item)=>
             `</div>
             </div>`
         )
-    }).join('')
+    }).join('');
+    
+    
 
-    var cart = []; 
+    let cart = []; 
 
     function addtocart(a){
         cart.push({...categories[a]});
@@ -82,7 +82,7 @@ const categories = [...new Set(product.map((item)=>
         else{
             document.getElementById("cartItem").innerHTML = cart.map((items)=>
             {
-                var{image, title, price} = items;
+                let{image, title, price} = items;
                 total=total+price;
                 document.getElementById("total").innerHTML = "$ "+total+".00";
                 return(
@@ -95,5 +95,8 @@ const categories = [...new Set(product.map((item)=>
                     "<i class='fa-solid fa-trash'onclick='delElement("+(j++)+")'></i></div>"
                 );
             }).join('');
+            saveLocal();
         }
     }
+let saveLocal = () =>{
+    localStorage.setItem('product', JSON.stringify(product))}
